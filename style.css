@@ -1,0 +1,259 @@
+html {
+    font-size: clamp(10px, 3vw, 29px);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-principal: rgb(168, 12, 12);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100dvh;
+    min-height: 100dvh;
+    background-image: linear-gradient(var(--cor-principal), black);
+    color: white;
+    transition: 0.2s;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    width: 90%;
+    padding-top: 10vw;
+    padding-bottom: 4vw;
+    height: inherit;
+}
+main p, main h1 {
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.39);
+}
+main p {
+    font-size: 1.2rem;
+}
+#titulo-playlist {
+    font-weight: bold;
+    font-size: 1.1rem;
+    opacity: 0.85;
+}
+main img {
+    height: 50%;
+    max-height: 90vw;
+    aspect-ratio: 1/1;
+    border: 2px solid rgba(255, 255, 255, 0.76);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.432);
+}
+section#container-nomes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.sem-destaque {
+    opacity: 0.6;
+    transition: 0.2s;
+}
+#barra-progresso {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.13);
+    height: 6px;
+    width: 100%;
+    border-radius: 15px;
+}
+#barra-progresso > div {
+    background-color: var(--cor-principal);
+    height: inherit;
+    width: 30%;
+    border-radius: inherit;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.158);
+    transition: 0.2s;
+}
+#barra-progresso > div:hover {
+    height: 8px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.322);
+    transition: 0.2s;
+}
+button {
+    color: inherit;
+    background-color: inherit;
+    border: none;
+    font-size: 1.8rem;
+}
+section#container-botoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.botao-medio {
+    font-size: 3.5rem;
+    transition: 0.2s;
+}
+.botao-grande {
+    font-size: 5rem;
+    transition: 0.2s;
+}
+#botaoLike:hover {
+    opacity: 1;
+    font-size: 2rem;
+    transition: 0.2s;
+}
+
+
+
+/*Media Query's*/
+
+/*Para dispositivos com largura mínima de 375 pixels*/
+@media screen and (min-width: 375px) {
+    main h1 {
+        font-size: 2.6rem;
+    }
+    main p {
+        font-size: 1.6rem;
+    }
+    #titulo-playlist {
+        font-size: 1.4rem;
+    }
+    main img {
+        border: 3px solid rgba(255, 255, 255, 0.76);
+        box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.432);
+    }
+    #barra-progresso {
+        height: 10px;
+        border-radius: 20px;
+    }
+    #barra-progresso > div {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.158);
+    }
+    #barra-progresso > div:hover {
+        height: 14px;
+        box-shadow: 0 0 13px rgba(255, 255, 255, 0.322);
+    }
+    button {
+        font-size: 2.5rem;
+    }
+    .botao-medio {
+        font-size: 5.5rem;
+    }
+    .botao-grande {
+        font-size: 6.5rem;
+    }
+    #botaoLike:hover {
+    font-size: 2.7rem;
+    }
+}
+
+/*Para dispositivos com largura mínim de 600 pixels*/
+@media screen and (min-width: 600px) {
+    main {
+        padding-top: 3vw;
+        padding-bottom: 1.5vw;
+        width: 70%;
+    }
+    main h1 {
+        font-size: 1.7rem;
+    }
+    main p {
+        font-size: 1.2rem;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.39);
+    }
+    #titulo-playlist {
+        font-size: 1rem;
+    }
+    main img {
+        border: 5px solid rgba(255, 255, 255, 0.76);
+        box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.432);
+    }
+    button {
+        font-size: 2rem;
+    }
+    .botao-medio {
+        font-size: 4rem;
+    }
+    .botao-grande {
+        font-size: 4.5rem;
+    }
+    #botaoLike:hover {
+    font-size: 2.3rem;
+    }
+}
+
+/*Para dispositivos com largura mínima de 1024pixels*/
+@media screen and (min-width: 1024px) {
+    main {
+        padding-top: 3vw;
+        padding-bottom: 1.5vw;
+        width: 60%;
+    }
+    main h1 {
+        font-size: 0.8rem;
+    }
+    main p {
+        font-size: 0.5rem;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.39);
+    }
+    #titulo-playlist {
+        font-size: 0.4rem;
+    }
+    main img {
+        border: 4px solid rgba(255, 255, 255, 0.76);
+    }
+    button {
+        font-size: 0.8rem;
+    }
+    .botao-medio {
+        font-size: 2.2rem;
+    }
+    .botao-grande {
+        font-size: 2.8rem;
+    }
+    #botaoLike:hover {
+    font-size: 1rem;
+    }
+}
+
+/*Para dispositivos com largura mínima de 1360 pixels*/
+@media screen and (min-width: 1360px) {
+    main {
+        padding-top: 2.5vw;
+        padding-bottom: 1vw;
+        width: 75%;
+    }
+    main h1 {
+        font-size: 1.2rem;
+    }
+    main p {
+        font-size: 0.7rem;
+    }
+    #titulo-playlist {
+        font-size: 0.5rem;
+    }
+    main img {
+        border: 3px solid rgba(255, 255, 255, 0.76);
+        box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.432);
+    }
+    button {
+        font-size: 0.8rem;
+    }
+    .botao-medio {
+        font-size: 2rem;
+    }
+    .botao-grande {
+        font-size: 2.8rem;
+    }
+    #botaoLike:hover {
+    font-size: 1rem;
+    }
+}
