@@ -43,6 +43,8 @@ const listaMusicas = [
     }
 ]
 
+
+
 //Declarando Variáveis e Eventos DOM
 let musicaAtual = Math.floor(Math.random() * 5)
 const root = document.documentElement
@@ -54,6 +56,10 @@ const botaoAnterior = document.querySelector(".bi-skip-start-fill")
 const botaoPlay = document.querySelector(".bi-play-circle-fill")
 const botaoProximo = document.querySelector(".bi-skip-end-fill")
 const botaoLike = document.querySelector("#botaoLike")
+
+
+
+//Definindo Funções
 
 //Função que altera as informações da música
 function alterarInformacoes() {
@@ -72,30 +78,24 @@ function alterarInformacoes() {
     }
 }
 
-//Chama a função para alterar as informações na primeira vez que o site é carregado.
-alterarInformacoes()
-
-
-//Adicionando eventos aos botões
-
-//Botão de like
-botaoLike.addEventListener("click", () => {
-    //Se não estiver preenchido, então o preenche
-    if (!listaMusicas[musicaAtual].like) {
-        listaMusicas[musicaAtual].like = true
-        botaoLike.className = "bi bi-heart-fill sem-destaque"
-        botaoLike.style.opacity = 1
-        return
+//Função para avançar a música
+function avancarMusica() {
+    musicaAtual += 1
+    
+    //Caso estiver na última música e o usuário clicar para avançar, a lista irá para a primeira música
+    if (musicaAtual >= listaMusicas.length) {
+        musicaAtual = 0
     }
+    
+    alterarInformacoes()
+    
+    if (botaoPlay.className === "bi bi-pause-circle-fill botao-grande") {
+        song.play()
+    }
+}
 
-    //Se estiver marcado, desmarca
-    listaMusicas[musicaAtual].like = false
-    botaoLike.className = "bi bi-heart sem-destaque"
-    botaoLike.style.opacity = 0.6
-})
-
-//Botão para voltar música
-botaoAnterior.addEventListener("click", () => {
+//Função para voltar a música
+function voltarMusica() {
     musicaAtual -= 1
 
     //Caso estiver na primeira música e o usuário clicar para voltar, a lista irá para a última música
@@ -108,10 +108,26 @@ botaoAnterior.addEventListener("click", () => {
     if (botaoPlay.className === "bi bi-pause-circle-fill botao-grande") {
         song.play()
     }
-})
+}
 
-//Botão Play/Pause
-botaoPlay.addEventListener("click", () => {
+//Função para curtir a música
+function curtirMusica() {
+    //Se o botão não estiver preenchido, então o preenche
+    if (!listaMusicas[musicaAtual].like) {
+        listaMusicas[musicaAtual].like = true
+        botaoLike.className = "bi bi-heart-fill sem-destaque"
+        botaoLike.style.opacity = 1
+        return
+    }
+
+    //Se o botão estiver marcado, desmarca
+    listaMusicas[musicaAtual].like = false
+    botaoLike.className = "bi bi-heart sem-destaque"
+    botaoLike.style.opacity = 0.6
+}
+
+//Função para pausar e despausar música
+function pausarDespausarMusica() {
     //Se o botão de play for clicado e estiver pausado, então ele é despausado e a música começa a tocar
     //Se o botão não estiver pausado, então ele pausa
     if (botaoPlay.className === "bi bi-play-circle-fill botao-grande"){
@@ -121,20 +137,25 @@ botaoPlay.addEventListener("click", () => {
     }
     botaoPlay.className = "bi bi-play-circle-fill botao-grande"
     song.pause()
-})
+}
+
+
+
+//Adicionando eventos aos botões
+
+//Botão de like
+botaoLike.addEventListener("click", curtirMusica)
+
+//Botão para voltar música
+botaoAnterior.addEventListener("click", voltarMusica)
+
+//Botão Play/Pause
+botaoPlay.addEventListener("click", pausarDespausarMusica)
 
 //Botão avançar música
-botaoProximo.addEventListener("click", () => {
-    musicaAtual += 1
+botaoProximo.addEventListener("click", avancarMusica)
 
-    //Caso estiver na última música e o usuário clicar para avançar, a lista irá para a primeira música
-    if (musicaAtual >= listaMusicas.length) {
-        musicaAtual = 0
-    }
 
-    alterarInformacoes()
 
-    if (botaoPlay.className === "bi bi-pause-circle-fill botao-grande") {
-        song.play()
-    }
-})
+//Chama a função para alterar as informações na primeira vez que o site é carregado.
+alterarInformacoes()
