@@ -64,6 +64,22 @@ section#container-nomes {
     opacity: 0.6;
     transition: 0.2s;
 }
+.tempo {
+    font-size: 1rem;
+}
+#barra-progresso-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#tempos-musica {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+}
 #barra-progresso {
     display: flex;
     align-items: center;
@@ -72,15 +88,15 @@ section#container-nomes {
     width: 100%;
     border-radius: 15px;
 }
-#barra-progresso > div {
+#barra-progresso-destaque {
     background-color: var(--cor-principal);
     height: inherit;
-    width: 30%;
+    width: 0%;
     border-radius: inherit;
     box-shadow: 0 0 3px rgba(255, 255, 255, 0.158);
     transition: 0.2s;
 }
-#barra-progresso > div:hover {
+#barra-progresso-destaque:hover {
     height: 8px;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.322);
     transition: 0.2s;
@@ -122,6 +138,9 @@ section#container-botoes {
     }
     main p {
         font-size: 1.6rem;
+    }
+    .tempo {
+    font-size: 1.4rem;
     }
     #titulo-playlist {
         font-size: 1.4rem;
@@ -169,6 +188,9 @@ section#container-botoes {
         font-size: 1.2rem;
         text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.39);
     }
+    .tempo {
+    font-size: 1rem;
+    }
     #titulo-playlist {
         font-size: 1rem;
     }
@@ -204,6 +226,9 @@ section#container-botoes {
         font-size: 0.5rem;
         text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.39);
     }
+    .tempo {
+    font-size: 0.3rem;
+    }
     #titulo-playlist {
         font-size: 0.4rem;
     }
@@ -236,6 +261,9 @@ section#container-botoes {
     }
     main p {
         font-size: 0.7rem;
+    }
+    .tempo {
+    font-size: 0.5rem;
     }
     #titulo-playlist {
         font-size: 0.5rem;

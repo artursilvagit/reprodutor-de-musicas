@@ -56,6 +56,9 @@ const botaoAnterior = document.querySelector(".bi-skip-start-fill")
 const botaoPlay = document.querySelector(".bi-play-circle-fill")
 const botaoProximo = document.querySelector(".bi-skip-end-fill")
 const botaoLike = document.querySelector("#botaoLike")
+const barraProgresso = document.querySelector("#barra-progresso > div")
+const pTempoMusica = document.querySelector("#tempo-atual")
+const pDuracaoMusica = document.querySelector("#duracao-musica")
 
 
 
@@ -139,6 +142,20 @@ function pausarDespausarMusica() {
     song.pause()
 }
 
+//Função para atualizar barra de progresso
+function atualizarBarraProgresso() {
+    const progresso = (song.currentTime / song.duration) * 100;
+    barraProgresso.style.width = progresso + "%";
+    pTempoMusica.textContent = formatarTempo(song.currentTime)
+}
+
+//Função para formatar o tempo
+function formatarTempo(segundos) {
+    const minutos = Math.floor(segundos / 60);
+    const seg = Math.floor(segundos % 60);
+    return `${minutos}:${seg < 10 ? '0' + seg : seg}`;
+}
+
 
 
 //Adicionando eventos
@@ -158,6 +175,13 @@ botaoProximo.addEventListener("click", avancarMusica)
 //Avançar para próxima musica quando um audio termina
 song.addEventListener("ended", avancarMusica)
 
+//Atualizar a barra de progresso com o evento TimeUpdate da tag audio
+song.addEventListener("timeupdate", atualizarBarraProgresso)
+
+//Adiciona o texto de duração da música após os metadados serem carregados
+song.addEventListener("loadedmetadata", () => {
+    pDuracaoMusica.textContent = formatarTempo(song.duration)
+})
 
 //Chama a função para alterar as informações na primeira vez que o site é carregado.
 alterarInformacoes()
