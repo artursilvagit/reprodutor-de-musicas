@@ -100,7 +100,7 @@ function voltarMusica() {
 
     //Caso estiver na primeira música e o usuário clicar para voltar, a lista irá para a última música
     if (musicaAtual <= -1) {
-        musicaAtual = 4
+        musicaAtual = listaMusicas.length - 1
     }
 
     alterarInformacoes()
