@@ -141,7 +141,7 @@ function pausarDespausarMusica() {
 
 
 
-//Adicionando eventos aos botões
+//Adicionando eventos
 
 //Botão de like
 botaoLike.addEventListener("click", curtirMusica)
@@ -155,6 +155,8 @@ botaoPlay.addEventListener("click", pausarDespausarMusica)
 //Botão avançar música
 botaoProximo.addEventListener("click", avancarMusica)
 
+//Avançar para próxima musica quando um audio termina
+song.addEventListener("ended", avancarMusica)
 
 
 //Chama a função para alterar as informações na primeira vez que o site é carregado.
