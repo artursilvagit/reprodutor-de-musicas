@@ -46,7 +46,7 @@ const listaMusicas = [
 
 
 //Declarando Variáveis e Eventos DOM
-let musicaAtual = Math.floor(Math.random() * 5)
+let musicaAtual = Math.floor(Math.random() * listaMusicas.length)
 const root = document.documentElement
 const imagem = document.querySelector("img")
 const nomeMusica = document.querySelector("#container-nomes h1")
