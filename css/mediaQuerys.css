@@ -1,0 +1,46 @@
+/* Media Querys */
+
+@media (min-width: 480px) {
+    html {
+    font-size: clamp(10px, 2.5vw, 29px);
+    }
+    main {
+        padding-top: 4vw;
+        padding-bottom: 2vw;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: clamp(10px, 1.7vw, 29px);
+    }
+    main {
+        width: 70%;
+    }
+    #container-adicionar-musicas form {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: clamp(10px, 1vw, 29px);
+    }
+    main {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1360px) {
+    html {
+        font-size: clamp(10px, 0.8vw, 29px);
+    }
+    main {
+        width: 60%;
+        padding-top: 2vw;
+        padding-bottom: 1vw;
+    }
+    #container-adicionar-musicas form {
+        width: 35%;
+    }
+}

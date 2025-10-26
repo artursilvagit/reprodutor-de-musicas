@@ -1,0 +1,82 @@
+#container-adicionar-musicas {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.438);
+    width: 100%;
+    height: 100%;
+}
+#container-adicionar-musicas form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    height: 80%;
+    color: rgb(224, 224, 224);
+    background-color: rgba(16, 16, 19, 0.959);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.158);
+}
+#container-adicionar-musicas form > section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+#container-adicionar-musicas form label {
+    font-size: 1.8rem;
+}
+#label2-arquivo-musica {
+    color: rgb(134, 134, 134);
+    text-decoration: underline;
+    transition: 0.1s;
+}
+#label2-arquivo-musica:hover {
+    color: rgb(68, 68, 68);
+    transition: 0.1s;
+}
+#container-adicionar-musicas form input {
+    width: 90%;
+}
+#container-adicionar-musicas input[type="file"] {
+    display: none;
+}
+#container-adicionar-musicas input[type="text"] {
+    background-color: rgb(59, 62, 73);
+    border: 3px solid rgb(27, 29, 36);
+    border-radius: 7px;
+    height: 2.6rem;
+    color: white;
+    padding-left: 0.5rem;
+}
+#container-adicionar-musicas input[type="text"]::placeholder {
+    color: gray;
+}
+#container-adicionar-musicas input[type="text"]:focus {
+    outline: 0;
+    border: 1px solid white;
+}
+#container-adicionar-musicas input[type="button"] {
+    background-color: rgb(50, 53, 66);
+    color: white;
+    font-weight: bold;
+    padding: 0.3rem;
+    border: none;
+    border-radius: 7px;
+}
+.bi-x {
+    position: fixed;
+    right: 7%;
+    top: 10.5%;
+    color: rgb(116, 119, 126);
+    font-size: 2.5rem;
+    transition: 0.1s;
+}
+.bi-x:hover {
+    color: white;
+    transition: 0.1s;
+}
