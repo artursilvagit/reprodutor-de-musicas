@@ -42,10 +42,23 @@ main p, main h1 {
 main p {
     font-size: 1.2rem;
 }
-#titulo-playlist {
+#container-titulo-playlist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
     font-weight: bold;
     font-size: 1.1rem;
     opacity: 0.85;
+}
+#container-titulo-playlist button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    aspect-ratio: 1/1;
+    background-color: rgba(0, 0, 0, 0.555);
+    border-radius: 50%;
 }
 main img {
     height: 50%;
@@ -128,160 +141,43 @@ section#container-botoes {
 }
 
 
+/* Media Querys */
 
-/*Media Query's*/
-
-/*Para dispositivos com largura mínima de 375 pixels*/
-@media screen and (min-width: 375px) {
-    main h1 {
-        font-size: 2.6rem;
+@media (min-width: 480px) {
+    html {
+    font-size: clamp(10px, 2.5vw, 29px);
     }
-    main p {
-        font-size: 1.6rem;
-    }
-    .tempo {
-    font-size: 1.4rem;
-    }
-    #titulo-playlist {
-        font-size: 1.4rem;
-    }
-    main img {
-        border: 3px solid rgba(255, 255, 255, 0.76);
-        box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.432);
-    }
-    #barra-progresso {
-        height: 10px;
-        border-radius: 20px;
-    }
-    #barra-progresso > div {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.158);
-    }
-    #barra-progresso > div:hover {
-        height: 14px;
-        box-shadow: 0 0 13px rgba(255, 255, 255, 0.322);
-    }
-    button {
-        font-size: 2.5rem;
-    }
-    .botao-medio {
-        font-size: 5.5rem;
-    }
-    .botao-grande {
-        font-size: 6.5rem;
-    }
-    #botaoLike:hover {
-    font-size: 2.7rem;
+    main {
+        padding-top: 4vw;
+        padding-bottom: 2vw;
     }
 }
 
-/*Para dispositivos com largura mínim de 600 pixels*/
-@media screen and (min-width: 600px) {
+@media (min-width: 768px) {
+    html {
+    font-size: clamp(10px, 1.7vw, 29px);
+    }
     main {
-        padding-top: 3vw;
-        padding-bottom: 1.5vw;
         width: 70%;
     }
-    main h1 {
-        font-size: 1.7rem;
+}
+
+@media (min-width: 1024px) {
+    html {
+    font-size: clamp(10px, 1vw, 29px);
     }
-    main p {
-        font-size: 1.2rem;
-        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.39);
-    }
-    .tempo {
-    font-size: 1rem;
-    }
-    #titulo-playlist {
-        font-size: 1rem;
-    }
-    main img {
-        border: 5px solid rgba(255, 255, 255, 0.76);
-        box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.432);
-    }
-    button {
-        font-size: 2rem;
-    }
-    .botao-medio {
-        font-size: 4rem;
-    }
-    .botao-grande {
-        font-size: 4.5rem;
-    }
-    #botaoLike:hover {
-    font-size: 2.3rem;
+    main {
+        width: 80%;
     }
 }
 
-/*Para dispositivos com largura mínima de 1024pixels*/
-@media screen and (min-width: 1024px) {
+@media (min-width: 1360px) {
+    html {
+    font-size: clamp(10px, 0.8vw, 29px);
+    }
     main {
-        padding-top: 3vw;
-        padding-bottom: 1.5vw;
         width: 60%;
-    }
-    main h1 {
-        font-size: 0.8rem;
-    }
-    main p {
-        font-size: 0.5rem;
-        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.39);
-    }
-    .tempo {
-    font-size: 0.3rem;
-    }
-    #titulo-playlist {
-        font-size: 0.4rem;
-    }
-    main img {
-        border: 4px solid rgba(255, 255, 255, 0.76);
-    }
-    button {
-        font-size: 0.8rem;
-    }
-    .botao-medio {
-        font-size: 2.2rem;
-    }
-    .botao-grande {
-        font-size: 2.8rem;
-    }
-    #botaoLike:hover {
-    font-size: 1rem;
-    }
-}
-
-/*Para dispositivos com largura mínima de 1360 pixels*/
-@media screen and (min-width: 1360px) {
-    main {
-        padding-top: 2.5vw;
+        padding-top: 2vw;
         padding-bottom: 1vw;
-        width: 75%;
-    }
-    main h1 {
-        font-size: 1.2rem;
-    }
-    main p {
-        font-size: 0.7rem;
-    }
-    .tempo {
-    font-size: 0.5rem;
-    }
-    #titulo-playlist {
-        font-size: 0.5rem;
-    }
-    main img {
-        border: 3px solid rgba(255, 255, 255, 0.76);
-        box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.432);
-    }
-    button {
-        font-size: 0.8rem;
-    }
-    .botao-medio {
-        font-size: 2rem;
-    }
-    .botao-grande {
-        font-size: 2.8rem;
-    }
-    #botaoLike:hover {
-    font-size: 1rem;
     }
 }
