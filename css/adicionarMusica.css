@@ -30,12 +30,12 @@
 #container-adicionar-musicas form label {
     font-size: 1.8rem;
 }
-#label2-arquivo-musica {
+#label2-arquivo-audio, #label2-arquivo-imagem {
     color: rgb(134, 134, 134);
     text-decoration: underline;
     transition: 0.1s;
 }
-#label2-arquivo-musica:hover {
+#label2-arquivo-audio:hover, #label2-arquivo-imagem:hover {
     color: rgb(68, 68, 68);
     transition: 0.1s;
 }
@@ -69,9 +69,9 @@
     border-radius: 7px;
 }
 .bi-x {
-    position: fixed;
-    right: 7%;
-    top: 10.5%;
+    position: absolute;
+    right: 10px;
+    top: 10px;
     color: rgb(116, 119, 126);
     font-size: 2.5rem;
     transition: 0.1s;
